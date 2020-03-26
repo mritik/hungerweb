@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  
+    <script type="text/javascript">
+        
+      var hungerDataArray = new Array();
+     
+      google.charts.load('current', {
+        'packages':['geochart'],
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(loadHungerData);
+      
+      function loadJSON(path, callback) {
+        console.log("path: " + path); 
+        var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+        xobj.open('GET', path, true); 
+        xobj.onreadystatechange = function () {
+              if (xobj.readyState == 4 && xobj.status == "200") {
+                callback(xobj.responseText);
+              }
+        };
+        xobj.send(null);  
+      }    
+        
+      function loadJSONUsingJQuery(path, callback) {
+        $.ajax ({ url: path, method: "GET"}).success(callback(response));
+      }
+        
+      function loadHungerData() {
+        loadJSON("hungerData.json", function(response) {
+            if(null == response) {
+                return;
+            }
+            var jsonData = JSON.parse(response);
+            for(var i=0; i< jsonData.countries.length; i++) {
+                hungerDataArray[i] = jsonData.countries[i];
+            }
+            drawHungerMap();
+        });
+      }
+        
+      function drawHungerMap() {
+        var hungerDataArrayWithHeader = new Array();  
+        hungerDataArrayWithHeader[0] = ["Country", "NumWastedChildren"];
+        for(i=0; i<hungerDataArray.length; i++) {
+            hungerDataArrayWithHeader[1+i] = [hungerDataArray[i].Country, hungerDataArray[i].NumWastedChildren];
+        }  
+          
+          
+        var hungerData = google.visualization.arrayToDataTable(hungerDataArrayWithHeader);
+
+        var options = {colors:['F7D3D3','EA1111','D71A1A','C23636','6D0A0A']};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(hungerData, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 1000px; height: 500px;"></div>
+  </body>
+</html>

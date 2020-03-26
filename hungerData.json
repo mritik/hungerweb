@@ -1,0 +1,187 @@
+{"countries": [
+  {
+    "Country": "Afghanistan",
+    "NumWastedChildren": 497.40737
+  },
+  {
+    "Country": "Angola",
+    "NumWastedChildren": 259.68687
+  },
+  {
+    "Country": "Bangladesh",
+    "NumWastedChildren": 2204.40821
+  },
+  {
+    "Country": "Bhutan",
+    "NumWastedChildren": 4.30031
+  },
+  {
+    "Country": "Solomon Islands",
+    "NumWastedChildren": 6.9993
+  },
+  {
+    "Country": "Myanmar",
+    "NumWastedChildren": 300.64101
+  },
+  {
+    "Country": "Burundi",
+    "NumWastedChildren": 96.85132
+  },
+  {
+    "Country": "Cambodia",
+    "NumWastedChildren": 173.09039
+  },
+  {
+    "Country": "Central African Republic",
+    "NumWastedChildren": 54.84767
+  },
+  {
+    "Country": "Chad",
+    "NumWastedChildren": 345.97907
+  },
+  {
+    "Country": "Comoros",
+    "NumWastedChildren": 12.55386
+  },
+  {
+    "Country": "Democratic Republic of the Congo",
+    "NumWastedChildren": 1085.481
+  },
+  {
+    "Country": "Benin",
+    "NumWastedChildren": 92.0861
+  },
+  {
+    "Country": "Equatorial Guinea",
+    "NumWastedChildren": 4.83271
+  },
+  {
+    "Country": "Ethiopia",
+    "NumWastedChildren": 1516.46277
+  },
+  {
+    "Country": "Eritrea",
+    "NumWastedChildren": 109.18869
+  },
+  {
+    "Country": "Djibouti",
+    "NumWastedChildren": 21.39686
+  },
+  {
+    "Country": "Gambia",
+    "NumWastedChildren": 37.04531
+  },
+  {
+    "Country": "Guinea",
+    "NumWastedChildren": 160.43975
+  },
+  {
+    "Country": "Haiti",
+    "NumWastedChildren": 45.85777
+  },
+  {
+    "Country": "Lao People's Democratic Republic",
+    "NumWastedChildren": 50.34612
+  },
+  {
+    "Country": "Lesotho",
+    "NumWastedChildren": 7.85347
+  },
+  {
+    "Country": "Liberia",
+    "NumWastedChildren": 38.63971
+  },
+  {
+    "Country": "Madagascar",
+    "NumWastedChildren": 281.5994
+  },
+  {
+    "Country": "Malawi",
+    "NumWastedChildren": 80.13475
+  },
+  {
+    "Country": "Mali",
+    "NumWastedChildren": 441.72761
+  },
+  {
+    "Country": "Mauritania",
+    "NumWastedChildren": 94.93338
+  },
+  {
+    "Country": "Mozambique",
+    "NumWastedChildren": 273.06393
+  },
+  {
+    "Country": "Nepal",
+    "NumWastedChildren": 265.59652
+  },
+  {
+    "Country": "Vanuatu",
+    "NumWastedChildren": 1.55074
+  },
+  {
+    "Country": "Niger",
+    "NumWastedChildren": 426.56756
+  },
+  {
+    "Country": "Guinea-Bissau",
+    "NumWastedChildren": 16.72283
+  },
+  {
+    "Country": "Timor-Leste",
+    "NumWastedChildren": 21.14583
+  },
+  {
+    "Country": "Rwanda",
+    "NumWastedChildren": 34.06913
+  },
+  {
+    "Country": "Sao Tome and Principe",
+    "NumWastedChildren": 1.22277
+  },
+  {
+    "Country": "Senegal",
+    "NumWastedChildren": 232.79156
+  },
+  {
+    "Country": "Sierra Leone",
+    "NumWastedChildren": 106.23642
+  },
+  {
+    "Country": "Somalia",
+    "NumWastedChildren": 332.20084
+  },
+  {
+    "Country": "South Sudan",
+    "NumWastedChildren": 403.36082
+  },
+  {
+    "Country": "Sudan",
+    "NumWastedChildren": 970.13724
+  },
+  {
+    "Country": "Togo",
+    "NumWastedChildren": 76.19398
+  },
+  {
+    "Country": "Tuvalu",
+    "NumWastedChildren": 0.033
+  },
+  {
+    "Country": "Uganda",
+    "NumWastedChildren": 267.33121
+  },
+  {
+    "Country": "United Republic of Tanzania",
+    "NumWastedChildren": 424.30455
+  },
+  {
+    "Country": "Burkina Faso",
+    "NumWastedChildren": 283.86623
+  },
+  {
+    "Country": "Yemen",
+    "NumWastedChildren": 639.79465
+  }
+]
+}
