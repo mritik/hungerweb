@@ -1,0 +1,133 @@
+<!--This is Home Page-->
+<!--Defining as Html-->
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  
+        <script type="text/javascript">
+
+          var hungerDataArray = new Array();
+
+          google.charts.load('current', {
+            'packages':['geochart'],
+            'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+          });
+          google.charts.setOnLoadCallback(loadHungerData);
+
+          function loadJSON(path, callback) {
+            console.log("path: " + path); 
+            var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            xobj.open('GET', path, true); 
+            xobj.onreadystatechange = function () {
+                  if (xobj.readyState == 4 && xobj.status == "200") {
+                    callback(xobj.responseText);
+                  }
+            };
+            xobj.send(null);  
+          }    
+
+          function loadJSONUsingJQuery(path, callback) {
+            $.ajax ({ url: path, method: "GET"}).success(callback(response));
+          }
+
+          function loadHungerData() {
+            loadJSON("hungerData.json", function(response) {
+                if(null == response) {
+                    return;
+                }
+                var jsonData = JSON.parse(response);
+                for(var i=0; i< jsonData.countries.length; i++) {
+                    hungerDataArray[i] = jsonData.countries[i];
+                }
+                drawHungerMap();
+            });
+          }
+
+          function drawHungerMap() {
+            var hungerDataArrayWithHeader = new Array();  
+            hungerDataArrayWithHeader[0] = ["Country", "NumWastedChildren"];
+            for(i=0; i<hungerDataArray.length; i++) {
+                hungerDataArrayWithHeader[1+i] = [hungerDataArray[i].Country, hungerDataArray[i].NumWastedChildren];
+            }  
+
+
+            var hungerData = google.visualization.arrayToDataTable(hungerDataArrayWithHeader);
+
+            var options = {colors:['F7D3D3','EA1111','D71A1A','C23636','6D0A0A']};
+
+            var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+            chart.draw(hungerData, options);
+          }
+        </script>
+    
+
+    </head>
+   
+    <body style="background-image:url(images/bgimg4.jpg); background-size: cover;">
+    
+            <!--Defining an unordered list with the elements Home, Info, Contact and Quiz-->
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="page1.html">Info</a></li>
+                <li><a href="page2.html">Contact</a></li>
+                <li><a href="QuizPage.html">Quiz</a></li>
+
+            </ul>
+                <!--Inline CSS with margin, padding and bg color and height-->
+                <div style="padding:30px;margin-top:0px;">
+                <!--Biggest Heading with the Labelled Web Page-->
+                <h1><b>Home</b></h1>
+            
+                    <h2>Child Hunger and What We Can Do About It</h2>
+            
+            
+                        <p><i>By: Mritik Dodla</i></p>
+ 
+                        <!-- Intro Text-->
+
+                    <p>Welcome to the Home Page of SDG Indicators.</p>
+                    <p>This website will provide information on a subset of SDG Goal 2.2 : Child Hunger in Developing Countries. </p>
+                     <!--Uploading Image of Child Hunger and positioning it next to text-->
+                    <div id="container">
+                    <img src="images/ChildHunger.jpg" style="width: 190px;position: relative; top:-100px;">
+                    <p>Many Children in developing nations such as Africa live in Hunger and the world needs to help them.<br>For all the information and facts about potential solutions and the problem go to the Info Page.
+                    </p>
+ 
+                       
+            
+                        </div>
+            
+
+          
+                    <!--Title of graph-->
+                    <h3><b>Graph of Wasted Under-5 Children living in Developing Countries in Thousands</b></h3>
+                        <!--Brief Description of what graph is supposed to do-->
+                        <p>This is a Geo Graph that shows developing regions with the most wasted/starving children. <br>Clicking on the link will redirect to a google sheets page which will show all the raw data.
+
+                            
+                            <br>
+      
+                     <!--Link to my google sheets page with raw data--> 
+                     <p>To see the raw data for this graph click the following link: </p> 
+                     <br>
+                     <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRUDcXnRayfHUj81FQSsnCeNMe25IqTPSb25sksVFAfuErMOL3OVS7u2ZwQYEkq1blYrBrH9H4cFCCc/pubhtml"target="_blank">Link to Raw Data</a>
+
+                    <!--Linking to CSS-->
+                    <link rel="stylesheet" href="css/mystyles.css">
+    
+                <div id="regions_div" style="width: 1000px; height: 500px;"></div>
+    
+    
+        
+   
+                </div> 
+        
+                
+    </body>
+</html>
+
+    
